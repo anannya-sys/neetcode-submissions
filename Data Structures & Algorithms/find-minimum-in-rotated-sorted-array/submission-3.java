@@ -1,0 +1,38 @@
+// class Solution {
+//     public int findMin(int[] nums) {
+//         int sm=nums[0];;
+//         for(int i=0;i<nums.length;i++) {
+//             if(sm>nums[i])
+//             {
+//             sm=nums[i];
+//             }
+
+//         } 
+//     return sm;
+// }
+// }
+class Solution {
+    public int findMin(int[] nums) {
+        int lb=0,ub=nums.length-1;
+        
+        while(lb<ub)
+        {
+            int mid=lb+(ub-lb)/2;
+        
+            if(nums[mid]<=nums[ub])
+            {
+                ub=mid;
+            }
+            else
+            {
+                lb=mid+1;
+            }
+
+        }
+        return nums[lb];
+        } 
+
+}
+
+
+
